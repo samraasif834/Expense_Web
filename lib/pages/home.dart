@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:expenseweb/pages/containers/container1.dart';
 import 'package:expenseweb/utils/constants.dart';
 import 'package:expenseweb/widgets/navbar.dart';
 import 'package:flutter/material.dart';
@@ -19,8 +20,9 @@ class _HomeState extends State<Home> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
-          children: const [
-            Navbar()
+          children:  [
+            Navbar(),
+           Container1(),
           ],
         ),
       ),

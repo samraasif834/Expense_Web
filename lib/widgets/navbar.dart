@@ -1,5 +1,6 @@
 // ignore: implementation_imports
 import 'package:expenseweb/utils/colors.dart';
+import 'package:expenseweb/utils/constants.dart';
 import 'package:expenseweb/utils/style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -76,7 +77,7 @@ Widget navLogo() {
    
       width: 110,
       decoration: BoxDecoration(
-          image: DecorationImage(image: AssetImage("assets/images/logo.png"))));
+          image: DecorationImage(image: AssetImage(logo))));
 }
 
 Widget navButton(String text) {
