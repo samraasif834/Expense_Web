@@ -17,7 +17,7 @@ class _Container2State extends State<Container2> {
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout(
-      mobile: MobileContainer(),
+      mobile: MobileContainer2(),
       desktop: DesktopContainer2(),
     );
   }
@@ -83,6 +83,46 @@ Widget MobileContainer() {
   ]));
 }
 
+Widget MobileContainer2() {
+  return Container(
+    width: double.infinity,
+    decoration: BoxDecoration(
+      color: AppColors.primary,
+    ),
+    child: Column(
+      children: [
+        Container(
+          padding: EdgeInsets.only(left: 20, right: 20, top: 20,bottom: 0),
+          child: Container(
+            height:195,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(dashboard),
+                fit: BoxFit.contain,
+              ),
+            ),
+          ),
+        ),
+        Container(
+          width: double.infinity,
+          color: Colors.white,
+          padding: EdgeInsets.symmetric(vertical: 40),
+          child: Column(
+            children: [
+              companylogo(fb),
+              companylogo(google),
+              companylogo(cocacola),
+              companylogo(samsung),
+
+            ],
+          ),
+          )
+      ],
+    ),
+  );
+}
+
 Widget DesktopContainer2() {
   return Container(
       height: 900,
@@ -93,21 +133,21 @@ Widget DesktopContainer2() {
       child: Column(children: [
         Expanded(
             child: Stack(children: [
-              Positioned(
-                right: -60,
-                // left: -20,
-                child: Container(height: 320,
+          Positioned(
+              right: -60,
+              // left: -20,
+              child: Container(
+                height: 320,
                 width: 320,
-               
                 decoration: BoxDecoration(
-                  image:DecorationImage(image: AssetImage(vector2),
-                  fit:BoxFit.contain,
-                  )
-                ),
+                    image: DecorationImage(
+                  image: AssetImage(vector2),
+                  fit: BoxFit.contain,
                 )),
-               Positioned(
+              )),
+          Positioned(
               // right: -20,
-              top:70,
+              top: 70,
               left: -40,
               child: Container(
                 height: 320,
@@ -117,7 +157,7 @@ Widget DesktopContainer2() {
                   image: AssetImage(vector1),
                   fit: BoxFit.contain,
                 )),
-              )),  
+              )),
           Positioned(
               left: 43,
               right: 43,
@@ -138,7 +178,12 @@ Widget DesktopContainer2() {
           padding: EdgeInsets.symmetric(vertical: 40),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [companylogo(fb), companylogo(google), companylogo(cocacola), companylogo(samsung)],
+            children: [
+              companylogo(fb),
+              companylogo(google),
+              companylogo(cocacola),
+              companylogo(samsung)
+            ],
           ),
         )
       ]));
@@ -147,7 +192,7 @@ Widget DesktopContainer2() {
 Widget companylogo(String image) {
   return Container(
       width: 160,
-      height: 36 ,
+      height: 36,
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(image),
